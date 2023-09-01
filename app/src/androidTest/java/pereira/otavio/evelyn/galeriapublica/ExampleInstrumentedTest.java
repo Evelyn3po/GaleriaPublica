@@ -1,4 +1,4 @@
-package pereira.otavio.evelyn.galeriapblica;
+package pereira.otavio.evelyn.galeriapublica;
 
 import android.content.Context;
 
