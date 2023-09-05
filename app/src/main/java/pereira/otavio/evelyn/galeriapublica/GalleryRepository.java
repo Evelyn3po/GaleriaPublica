@@ -27,7 +27,6 @@ public class GalleryRepository {
             offSet) throws FileNotFoundException {
 
         List<ImageData> imageDataList = new ArrayList<>();
-
         int w = (int)
                 context.getResources().getDimension(R.dimen.im_width);
         int h = (int)
@@ -66,21 +65,21 @@ public class GalleryRepository {
             queryArgs.putInt(ContentResolver.QUERY_ARG_OFFSET,
                     offSet);
 
-            cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_C ONTENT_URI,
+            cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                     projection,
                     queryArgs,
                     null
             );
         }
         else {
-            cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_C
-                            ONTENT_URI,
+            cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                     projection,
                     selection,
                     selectionArgs,
                     sort + " ASC + LIMIT " + String.valueOf(limit) + " OFFSET " + String.valueOf(offSet)
             );
         }
+
         int idColumn =
                 cursor.getColumnIndexOrThrow(MediaStore.Images.Media._ID);
         int nameColumn =
