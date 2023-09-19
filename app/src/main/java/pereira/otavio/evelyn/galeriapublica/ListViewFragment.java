@@ -29,6 +29,7 @@ public class ListViewFragment extends Fragment {
     private View view;
 
     public static ListViewFragment newInstance() {
+
         return new ListViewFragment();
     }
 

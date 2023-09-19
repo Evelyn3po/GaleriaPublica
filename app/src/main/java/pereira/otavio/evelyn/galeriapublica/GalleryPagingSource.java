@@ -66,7 +66,7 @@ public class GalleryPagingSource extends
                             imageDataList =
                                     galleryRepository.loadImageData(loadParams.getLoadSize(),
                                             finalOffSet);
-                            Integer nextKey = null
+                            Integer nextKey = null;
                             if (imageDataList.size() >=
                                     loadParams.getLoadSize()) {
                                 nextKey = finalNextPageNumber + 1;
