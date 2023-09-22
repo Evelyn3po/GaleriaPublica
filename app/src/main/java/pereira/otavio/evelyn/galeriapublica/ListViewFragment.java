@@ -29,17 +29,14 @@ public class ListViewFragment extends Fragment {
     private View view;
 
     public static ListViewFragment newInstance() {
-
         return new ListViewFragment();
     }
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.list_view_fragment,
-                container, false);
+        view = inflater.inflate(R.layout.fragment_list_view, container, false);
         return view;
     }
 
@@ -53,14 +50,12 @@ public class ListViewFragment extends Fragment {
                 ImageDataComparator());
         LiveData<PagingData<ImageData>> liveData =
                 mViewModel.getPageLv();
-        liveData.observe(getViewLifecycleOwner(), new
-                Observer<PagingData<ImageData>>() {
+        liveData.observe(getViewLifecycleOwner(), new Observer<PagingData<ImageData>>() {
 
             @Override
             public void onChanged(PagingData<ImageData>
                                   objectPagingData) {
-                        listAdapter.submitData(getViewLifecycleOwner().getLifecycle(),objectP
-                                agingData);
+                listAdapter.submitData(getViewLifecycleOwner().getLifecycle(),objectPagingData);
             }
         });
 

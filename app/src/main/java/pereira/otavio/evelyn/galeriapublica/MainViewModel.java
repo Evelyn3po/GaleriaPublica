@@ -14,10 +14,12 @@ import androidx.paging.PagingLiveData;
 import kotlinx.coroutines.CoroutineScope;
 import pereira.otavio.evelyn.galeriapblica.R;
 
-LiveData<PagingData<ImageData>> pageLv;
+
 
 //MainViewModel herda de AndroidViewModel
 public class MainViewModel extends AndroidViewModel {
+
+    LiveData<PagingData<ImageData>> pageLv;
     //MAinViewModel guarda navigationOpSelected
     int navigationOpSelected = R.id.gridViewOp;
 
